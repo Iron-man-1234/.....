@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            background-color: black;
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚠️ WARNING ⚠️</h1>
+    <div class="container">
+        <h2>Your IP Has Been Hacked! 💀</h2>
+        <h3>Your IP: <span id="ip"></span></h3>
+    </div>
+
+    <p class="footer">Made by TW 😈</p>
+
+    <script>
+        fetch("https://api64.ipify.org?format=json")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip").textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById("ip").textContent = "Error!";
+            });
+    </script>
+</body>
+</html>
